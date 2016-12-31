@@ -7,7 +7,7 @@
 							<% unless song_signed_in? %>
 							<li><a href="#">Explore</a></li>
 							<li><%= link_to "Sign In", new_song_session_path%></li>
-							<li><%= link_to "Create Album", new_song_registration_path%></li>
+							<li><%= link_to "Create Playlist", new_song_registration_path%></li>
 							<% else %>
 							<li><a href="#">Dashboard</a></li>
 							<li><a href="#">Explore</a></li>
@@ -20,7 +20,7 @@
 			</header>
 			<div class="wrapper_skinny">
 				<h1>Discover new music<br>or add your own!</h1>
-				<%= link_to "Create Album", new_song_registration_path, class: "button button_highlight"%>
+				<%= link_to "Create Playlist", new_song_registration_path, class: "button button_highlight"%>
 				<a href="#" class="button button_white">Explore</a>
 			</div>
 
