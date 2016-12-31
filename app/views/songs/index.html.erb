@@ -1,0 +1,24 @@
+<div id="banner" class="songs_banner">
+<h1>Discover your new favourite song or show</h1>
+		</div>
+			<div id="songs" class="cd">
+			<div class="wrapper">
+		<ul>
+					<% @songs.each do |song| %>
+					<%= link_to song do %>
+	<li>
+		<img src="images/edsheeran.jpg" alt="ed sheeran">
+			<div class="song_overview">
+					<h2><%= song.title %></h2>
+			<p class="song_count">8 Songs</p>
+							</div>
+						</li>
+
+			<% end %>
+
+			<% end %>
+
+		</ul>
+	</div>
+</div>
+		
