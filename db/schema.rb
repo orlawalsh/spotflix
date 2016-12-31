@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161230071534) do
+ActiveRecord::Schema.define(version: 20161231165311) do
+
+  create_table "lists", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "song_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["song_id"], name: "index_lists_on_song_id"
+  end
 
   create_table "songs", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
