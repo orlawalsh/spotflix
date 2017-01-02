@@ -17,6 +17,7 @@ class ListsController < ApplicationController
 	end
 	
 	def show
+		@lists = List.where(song_id: @song).order("created_at DESC").reject{|e| e.id == @list.id}
 
 	end
 

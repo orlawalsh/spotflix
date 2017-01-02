@@ -1,111 +1,65 @@
 <div id="song_show">
-			<div id="show_banner">
-				<div class="wrapper_skinny">
-					<h1><%= @song.title %></h1>
-				<p class="description"><%= @song.description %></p>
-				<% unless @song.itunes.blank? %>
-					<a href="<%= @song.itunes %>" class="buy_link">iTunes</a>
-				<% end %>
-				<% unless @song.amazon.blank? %>
-					<a href="<%= @song.amazon %>" class="buy_link">Amazon</a>
-				<% end %>
-				<% unless @song.playstore.blank? %>
-					<a href="<%= @song.playstore %>" class="buy_link">Playstore</a>
-				<% end %>
-					
-				</div>
-			</div>
-			<div id="breadcrumb">
-				<%= link_to songs_path do %>
-					All Songs
-					<span>/</span>
-					<%= link_to @song.title, song_path(@song) %>
-					<span>/</span>
-					<%= @list.title %>
-					<% end %>
-
-								<div id="album_content">
-				<div class="wrapper_skinny">
-					<img src="images/amy.jpg" alt="Songs I Wrote with Amy" class="current_album">
-				<h2><%= @list.title %></h2>
-				<p class="description"><%= @list.description %>
-								</p>
-					</div>
-			</div>
-			</div>
-			<div id="albums">
-				<div class="wrapper_skinny">
-					<ul class="cf">
-						<% @lists.each do |list| $>
-						<li class="cf">
-							<div class="album_thumbnail">
-								<a href="#">
-									<img src="images/amy.jpg" alt="Songs I Wrote with Amy">
-								</a>
-							</div>
-							<div class="album_overview">
-								<h2> 
-								<%= link_to list.title, song_list_path(@song, list) %>
-								</h2>
-								<p class="description">
-								Songs I Wrote with Amy is an extended play, independently released by Ed Sheeran on April 4, 2010. After the success of +, Sheeran re-released five of his EPs, including Songs I Wrote with Amy, which was released a second time on December 9, 2011. All of the songs were written collaboratively by Ed Sheeran and Amy Wadge.
-								</p>
-							</div>
-						</li>
-						<% end %>
-						<li class="cf">
-							<div class="album_thumbnail">
-								<a href="album.html">
-									<img src="images/5.jpg" alt="No. 5 Collaborations Project">
-								</a>
-							</div>
-							<div class="album_overview">
-								<h2> 
-									<a href="album.html">No. 5 Collaborations Project</a>
-								</h2>
-								<p class="description">
-									No. 5 Collaborations Project is an extended play by British singer-songwriter Ed Sheeran. It was the fifth out of five EPs he recorded with the hope of being signed by a record label. Sheeran wanted each song to act as a musical and tried to avoid lyrics about women.
-									Musically the album combined sensitive production, with serious subject matters and "haunting" themes. The EP features a collection of grime artists such as; Devlin, Wiley, P Money, Ghetts and JME. Henry Yanney of Soul Culture gave the album a positive review and the album peaked at number 46 on the UK Albums Chart.
-								</p>
-							</div>
-							
-						</li>
-							<li class="cf">
-							<div class="album_thumbnail">
-								<a href="album.html">
-									<img src="images/plus.jpg" alt="+">
-								</a>
-							</div>
-							<div class="album_overview">
-								<h2> 
-									<a href="album.html">+ (Plus)</a>
-								</h2>
-								<p class="description">
-									+ (pronounced "plus") is the debut studio album by English singer-songwriter, Ed Sheeran, released on 9 September 2011 by Asylum Records and Atlantic Records. The album marks Sheeran's commercial breakthrough, having previously released five EPs independently. Jake Gosling produced the majority of the album, with additional production by American hip hop producer, No I.D..
-								</p>
-							</div>
-						</li>
-						<li class="cf">
-							<div class="album_thumbnail">
-								<a href="album.html">
-									<img src="images/x.jpg" alt="X">
-								</a>
-							</div>
-							<div class="album_overview">
-								<h2> 
-									<a href="album.html">X (Multiply)</a>
-								</h2>
-								<p class="description">
-								x (pronounced "multiply") is the second studio album by English singer-songwriter, Ed Sheeran. It was released on 20 June 2014 in Australia and New Zealand, and worldwide on 23 June through Asylum Records and Atlantic Records. The album received positive reviews from music critics. It has become an international success, peaking at No. 1 in fifteen countries, while topping both the UK Albums Chart and the US Billboard 200. x also reached the top 5 in seven other countries and was the best selling album of 2014 in Australia, New Zealand, Ireland, and the United Kingdom. Five singles were released from the album: "Sing", "Don't", "Thinking Out Loud", "Bloodstream" (a collaboration with Rudimental), and "Photograph".
-								</p>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<div class="pagination">
-		<span class="previous_page disabled">Previous</span>
-			<em class="current">1</em>
-			<a href="#">2</a>
-			<a class="next_page" href="#">Next</a>
+		<div id="show_banner">
+			<div class="wrapper_skinny">
+				<h1><%= @song.title %></h1>
+			<p class="description"><%= @song.description %></p>
+			<% unless @song.itunes.blank? %>
+				<a href="<%= @song.itunes %>" class="buy_link">iTunes</a>
+			<% end %>
+			<% unless @song.amazon.blank? %>
+				<a href="<%= @song.amazon %>" class="buy_link">Amazon</a>
+			<% end %>
+			<% unless @song.playstore.blank? %>
+				<a href="<%= @song.playstore %>" class="buy_link">Playstore</a>
+			<% end %>
+				
 			</div>
 		</div>
+		<div id="breadcrumb">
+			<%= link_to songs_path do %>
+				All Songs
+				<span>/</span>
+				<%= link_to @song.title, song_path(@song) %>
+				<span>/</span>
+				<%= @list.title %>
+				<% end %>
+
+	<div id="album_content">
+			<div class="wrapper_skinny">
+				<img src="images/amy.jpg" alt="Songs I Wrote with Amy" class="current_album">
+			<h2><%= @list.title %></h2>
+			<p class="description"><%= @list.description %>
+							</p>
+			</div>
+		</div>
+		</div>
+		<div id="albums">
+			<div class="wrapper_skinny">
+				<ul class="cf">
+					<% @lists.each do |list| %>
+					<li class="cf">
+						<div class="album_thumbnail">
+							<a href="album.html">
+								<img src="images/amy.jpg" alt="Songs I Wrote with Amy">
+							</a>
+						</div>
+						<div class="album_overview">
+							<h2> 
+					<%= link_to list.title, song_list_path(@song, list) %>
+				</h2>
+				<p class="description">
+				<%= truncate(list.description, length: 170) %>
+				</p>
+			</div>
+		</li>
+		<% end %>	
+				</ul>
+			</div>
+			<div class="pagination">
+	<span class="previous_page disabled">Previous</span>
+		<em class="current">1</em>
+		<a href="#">2</a>
+		<a class="next_page" href="#">Next</a>
+		</div>
+	</div>
+</div>
