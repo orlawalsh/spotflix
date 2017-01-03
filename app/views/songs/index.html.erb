@@ -3,11 +3,11 @@
 		</div>
 			<div id="songs" class="cd">
 			<div class="wrapper">
-		<ul>
+		<ul class="cf">
 					<% @songs.each do |song| %>
 					<%= link_to song do %>
 	<li>
-		<img src="images/edsheeran.jpg" alt="ed sheeran">
+		<!-- <img src="images/edsheeran.jpg" alt="ed sheeran"> -->
 			<div class="song_overview">
 					<h2><%= song.title %></h2>
 			<p class="song_count">8 Songs</p>
@@ -19,6 +19,7 @@
 			<% end %>
 
 		</ul>
+	
 	</div>
 </div>
 		

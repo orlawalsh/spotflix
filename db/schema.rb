@@ -10,14 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161231165311) do
+ActiveRecord::Schema.define(version: 20170103041334) do
 
   create_table "lists", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
     t.integer  "song_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "mp3_file_name"
+    t.string   "mp3_content_type"
+    t.integer  "mp3_file_size"
+    t.datetime "mp3_updated_at"
     t.index ["song_id"], name: "index_lists_on_song_id"
   end
 

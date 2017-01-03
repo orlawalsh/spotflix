@@ -6,6 +6,7 @@ class SongsController < ApplicationController
 		@songs = Song.all.order("created_at DESC")
 	end
 
+
 	def show
 		
 	end

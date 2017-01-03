@@ -13,6 +13,9 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise', '~> 4.2'
+gem 'paperclip', '~> 5.1'
+gem 'will_paginate', '~> 3.1', '>= 3.1.5'
+
 
 group :development, :test do
   gem 'byebug'
