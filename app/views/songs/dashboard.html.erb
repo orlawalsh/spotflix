@@ -1,0 +1,54 @@
+<div id="song_show">
+      <div id="show_banner">
+        <div class="wrapper_skinny">
+          <h1>Ed Sheeran Dashboard</h1>
+          
+        </div>
+      </div>
+
+      <div id="links">
+        <div class="wrapper_skinny">
+          <ul>
+            <li class="current">Song</li>
+            <li><%= link_to "New Song", new_song_list_path(@song) %></li>
+            <li> <%= link_to "Account Settings", edit_song_registration_path %></li>
+            <li><%= link_to "View Songs", song_path(current_song) %></li>
+          </ul>
+        </div>
+      </div>
+
+            <div id="albums">
+        <div class="wrapper_skinny">
+          <ul class="cf">
+            <% @lists.each do |list| %>
+            <li class="cf">
+              <div class="album_thumbnail">
+                <a href="album.html">
+                  <img src="images/amy.jpg" alt="Songs I Wrote with Amy">
+                </a>
+              </div>
+              <div class="album_overview">
+                <h2> 
+                  <%= link_to list.title, song_list_path(@song, list) %>
+                </h2>
+                <p class="description">
+                <%= truncate(list.description, length: 170) %>
+                </p>
+                <div class="auth_link">
+                 <%= link_to "Edit", edit_song_list_path(@song, list) %>
+                  <%= link_to "Delete", song_list_path(@song, list), method: :delete, data:{confirm: "Are you sure you want to delete this?"} %>
+                </div>
+              </div>
+            </li>
+            <% end %>
+            
+            </li>
+          </ul>
+        </div>
+        <div class="pagination">
+    <span class="previous_page disabled">Previous</span>
+      <em class="current">1</em>
+      <a href="#">2</a>
+      <a class="next_page" href="#">Next</a>
+      </div>
+    </div>
