@@ -1,4 +1,6 @@
 class ListsController < ApplicationController
+	before_action :authenticate_song!, except: [:show]
+	before_filter :require_permission
 	before_action :find_song
 	before_action :find_list, only: [:show, :edit, :update, :destroy]
 
@@ -53,5 +55,14 @@ class ListsController < ApplicationController
 	def find_list
 		@list = List.find(params[:id])
 
+	end
+
+	def require_permission
+		@song = Song.find(params[:song_id])
+		if current_song != @song
+			redirect_to root_path, notice: "Sorry, you don't have access to that page!"
+		end
+
+		
 	end
 end
